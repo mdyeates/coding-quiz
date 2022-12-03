@@ -1,33 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap");
+
+/* VARIABLES */
+:root {
+  --bg-purple: #1f1147;
+  --bglight-purple: #361e70;
+  --alt-purple: #2a175b;
+  --btn-purple: #6949fd;
+  --highlight-turqoise: #74eabc;
+  --text-white: #fff;
+}
+
+/* || GLOBAL VARIABLES */
 body {
-  font-family: Arial;
+  font-family: "Fira Sans", sans-serif;
   font-size: 120%;
+  background-color: var(--bg-purple);
+  color: var(--text-white);
+}
+
+/* || CUSTOM STYLES */
+/* Start Screen */
+.start {
+  padding: 10px;
+}
+
+.start img {
+  width: 90%;
+  margin-bottom: 10px;
+}
+
+.start h1 {
+  color: var(--highlight-turqoise);
+}
+
+.start button:last-child {
+  border: 1px solid var(--btn-purple);
+  color: var(--btn-purple);
+  background-color: var(--bg-purple);
+}
+
+.start button:last-child:hover {
+  border: 1px solid var(--btn-purple);
+  color: var(--text-white);
+  background-color: var(--btn-purple);
 }
 
 a {
-  color: #563d7c;
+  color: var(--bglight-purple);
   text-decoration: none;
   transition: color 0.1s;
 }
 
 a:hover {
-  color: #8570a5;
+  color: var(--btn-purple);
 }
 
 button {
   display: inline-block;
   margin: 5px;
   cursor: pointer;
+  width: 50%;
   font-size: 100%;
-  background-color: #563d7c;
+  background-color: #6949fd;
   border-radius: 5px;
-  padding: 2px 10px;
+  padding: 12px 50px;
   color: white;
   border: 0;
   transition: background-color 0.1s;
 }
 
 button:hover {
-  background-color: #8570a5;
+  background-color: var(--highlight-turqoise);
 }
 
 .choices button {
