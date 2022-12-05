@@ -14,9 +14,11 @@ var feedback = document.querySelector("#feedback");
 var finalScoreSpan = document.querySelector("#final-score");
 
 // || GLOBAL
-var secondsCount = questions.length * 10;
-var indexOfCurrentQuestion = 0;
+var indexOfCurrentQuestion = Math.floor(Math.random() * questions.length);
 var timePenalty = 10;
+var questionCount = 0;
+var maxNumberOfQuestions = 5;
+var secondsCount = maxNumberOfQuestions * 10;
 
 // Event listener to start quiz/submit score
 startBtn.onclick = startQuiz;
@@ -31,7 +33,7 @@ startTimer = () => {
     secondsCount--;
     timerNumber.innerText = secondsCount;
     // Tests if time has run out or if questions are completed
-    if (secondsCount <= 0 || indexOfCurrentQuestion === questions.length) {
+    if (secondsCount <= 0 || questionCount === maxNumberOfQuestions) {
       gameOver();
       clearInterval(intervalTime);
     } else {
@@ -96,7 +98,10 @@ function checkAnswer() {
   setTimeout(() => {
     feedback.setAttribute("class", "feedback hide");
   }, 1500);
-  // View next question
+  // Remove current question from selection so it doesn't repeat
+  questions.splice(indexOfCurrentQuestion, 1);
+  // View next question and add 1 to count
+  questionCount++;
   indexOfCurrentQuestion++;
 }
 
