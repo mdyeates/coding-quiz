@@ -9,15 +9,12 @@
   </head>
 
   <body>
-    <div class="timer hide">Seconds Remaining: <span id="time">0</span></div>
-
-    <div class="wrapper">
+    <div class="wrapper textCenter">
       <div id="start-screen" class="start">
-        <img src="assets/images/computer.png" alt="" />
+        <img src="assets/images/computer.png" alt="image of a coding workspace" />
         <h1>Coding Quiz</h1>
         <p>Let's Play!</p>
         <p>Test your knowledge</p>
-
         <button id="start">Play Now</button>
         <a href="instructions.html"><button id="instructions" class="button2">Instructions</button></a>
         <div class="scores">
@@ -26,7 +23,13 @@
       </div>
 
       <div id="questions" class="hide">
-        <p id="question-number">test</p>
+        <div class="quizInfo">
+          <p id="question-number"></p>
+          <div class="timer hide">Time remaining: <span id="time">0</span></div>
+        </div>
+        <div class="progressBar">
+          <div class="progressBarFull"></div>
+        </div>
         <h2 id="question-title" class="questionTitle"></h2>
         <div id="choices" class="choices"></div>
       </div>
@@ -41,13 +44,14 @@
           </div>
         </div>
         <p class="textCenter">
-          <input class="input" type="text" id="initials" max="3" placeholder="Enter your initials here..." />
+          <input class="input" type="text" id="initials" maxlength="3" placeholder="Enter your initials here..." />
           <button id="submit">Submit</button>
         </p>
       </div>
 
       <div id="feedback" class="feedback hide"></div>
     </div>
+
     <script src="assets/js/questions.js"></script>
     <script src="assets/js/logic.js"></script>
   </body>
