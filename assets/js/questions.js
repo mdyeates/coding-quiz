@@ -100,4 +100,158 @@ var questions = [
     choices: ["do...while", "forEach", "while", "for"],
     answer: "do...while",
   },
+  {
+    title: "Which of the following methods can be used to display data in some form using Javascript?",
+    choices: ["document.write()", "console.log()", "window.alert()", "All of the above"],
+    answer: "All of the above",
+  },
+  {
+    title: "How to stop an interval timer in Javascript?",
+    choices: ["clearTimer", "clearInterval", "intervalOver", "None of the above"],
+    answer: "clearInterval",
+  },
+  {
+    title: "What does … operator do in JS?",
+    choices: [
+      "Used to spread iterables to individual elements",
+      "Describe datatype of undefined",
+      "No such operator exsists",
+      "None of the above",
+    ],
+    answer: "Used to spread iterables to individual elements",
+  },
+  {
+    title: "Which of these evaluate to true?",
+    choices: ["Boolean('false')", "Boolean('')", "Boolean(0)", "Boolean(NaN)"],
+    answer: "Boolean('false')",
+  },
+  {
+    title: "What will this code log to the console: console.log(typeof 41.1)",
+    choices: ["Nothing. It resuults in a ReferenceError", "decimal", "float", "number"],
+    answer: "number",
+  },
+  {
+    title: "Which value is not falsey?",
+    choices: ["[ ]", "undefined", "0", "null"],
+    answer: "[ ]",
+  },
+  {
+    title: "What will be logged to the console: console.log(typeof 'blueberry'); ",
+    choices: ["array", "string", "Boolean", "object"],
+    answer: "string",
+  },
+  {
+    title: "Which choice is NOT an array method?",
+    choices: ["array.slice()", "array.shift()", "array.push()", "array.replace()"],
+    answer: "array.replace()",
+  },
+  {
+    title: "Which choice is a valid example of an arrow function, assuming c is defined in the outer scope?",
+    choices: ["a, b => { return c; }", "a, b => c", "{ a, b } => c", "(a,b) => c"],
+    answer: "(a,b) => c",
+  },
+  {
+    title:
+      "Which statement can take a single expression as input and then look through a number of choices until one that matches that value is found?",
+    choices: ["else", "when", "if", "switch"],
+    answer: "switch",
+  },
+  {
+    title: "What is the output of this code: var x = 6 + 3 + '3'",
+    choices: ["93", "12", "66", "633"],
+    answer: "93",
+  },
+  {
+    title: "Which tag pair is used in HTML to embed JavaScript?",
+    choices: ["<js></js>", "<script></script>", "<javascript></javascript>", "<style></style>"],
+    answer: "<script></script>",
+  },
+  {
+    title: "What is the difference between the map() and the forEach() methods on the Array prototype?",
+    choices: [
+      "There is no difference",
+      "The forEach() method returns a single output value, whereas the map() method performs operation on each value in the array.",
+      "The map() methods returns a new array with a transformation applied on each item in the original array, whereas the forEach() method iterates through an array with no return value.",
+      "The forEach() methods returns a new array with a transformation applied on each item in the original array, whereas the map() method iterates through an array with no return value.",
+    ],
+    answer:
+      "The map() methods returns a new array with a transformation applied on each item in the original array, whereas the forEach() method iterates through an array with no return value.",
+  },
+  {
+    title: "Which event is fired on a text field within a form when a user tabs to it, or clicks or touches it?",
+    choices: ["focus", "blur", "hover", "enter"],
+    answer: "focus",
+  },
+  {
+    title: "Which method is called automatically when an object is initialized?",
+    choices: ["create()", "new()", "constructor()", "init()"],
+    answer: "constructor()",
+  },
+  {
+    title: "How do you add a comment to JavaScript code?",
+    choices: ["! This is a comment", "# This is a comment", "*/ This is a comment", "// This is a comment"],
+    answer: "// This is a comment",
+  },
+  {
+    title: "What statement can be used to skip an iteration in a loop?",
+    choices: ["break", "pass", "skip", "continue"],
+    answer: "continue",
+  },
+  {
+    title: "Which of these is a valid variable name?",
+    choices: ["5thItem", "firstName", "grand total", "function"],
+    answer: "firstName",
+  },
+  {
+    title:
+      "Your code is producing the error: \"TypeError: Cannot read property 'reduce' of undefined.\" What does that mean?",
+    choices: [
+      "You are calling a method named reduce on an object that's declared but has no value",
+      "You are calling a method named reduce on an object that does not exist",
+      "You are calling a method named reduce on an empty array",
+      "You are calling a method named reduce on an object that's has a null value",
+    ],
+    answer: "You are calling a method named reduce on an object that's declared but has no value",
+  },
+  {
+    title: "What does the following expression evaluate to: [] == [];",
+    choices: ["true", "undefined", "[ ]", "false"],
+    answer: "false",
+  },
+  {
+    title: "Why is it usually better to work with Objects instead of Arrays to store a collection of records?",
+    choices: [
+      "Objects are more efficient in terms of storage",
+      "Adding a record to an object is significantly faster than pushing a record into an array",
+      "Most operations involve looking up a record, and objects can do that better than arrays",
+      "Working with objects makes the code more readable",
+    ],
+    answer: "Most operations involve looking up a record, and objects can do that better than arrays",
+  },
+  {
+    title: "Which of the following is not a keyword in JavaScript?",
+    choices: ["this", "catch", "function", "array"],
+    answer: "array",
+  },
+  {
+    title:
+      "Which Variable-defining keyword allows its variable to be accessed (as undefined) before the line that defines it?",
+    choices: ["All of them", "const", "var", "let"],
+    answer: "var",
+  },
+  {
+    title: "Which of the following operators can be used to do a short-circuit evaluation?",
+    choices: ["++", "--", "==", "||"],
+    answer: "||",
+  },
+  {
+    title: "What will be logged to the console: console.log(typeof 42);",
+    choices: ["'float'", "'value'", "'number'", "'integer'"],
+    answer: "'number'",
+  },
+  {
+    title: "Reference 'avenue' in: var roadTypes = ['steet', 'road', 'avenue']",
+    choices: ["roadTypes.2", "roadTypes[3]", "roadTypes.3", "roadTypes[2]"],
+    answer: "roadTypes[2]",
+  },
 ];
