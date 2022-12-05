@@ -127,7 +127,7 @@ var questions = [
   },
   {
     title: "What will this code log to the console: console.log(typeof 41.1)",
-    choices: ["Nothing. It resuults in a ReferenceError", "decimal", "float", "number"],
+    choices: ["Nothing. It results in a ReferenceError", "decimal", "float", "number"],
     answer: "number",
   },
   {
