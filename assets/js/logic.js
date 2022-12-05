@@ -12,49 +12,56 @@ var startBtn = document.querySelector("#start");
 var submitBtn = document.querySelector("#submit");
 var feedback = document.querySelector("#feedback");
 var finalScoreSpan = document.querySelector("#final-score");
+var questionNumber = document.querySelector("#question-number");
+var correctAnswersDisplay = document.querySelector("#correct-answers-total");
 
 // || GLOBAL
-var indexOfCurrentQuestion = Math.floor(Math.random() * questions.length);
-var timePenalty = 10;
 var questionCount = 0;
 var maxNumberOfQuestions = 5;
 var secondsCount = maxNumberOfQuestions * 10;
+var time;
+var availableQuestions = [];
+var displayQuestionNumber;
+var correctAnswersTotal = 0;
 
 // Event listener to start quiz/submit score
-startBtn.onclick = startQuiz;
+startBtn.onclick = startGame;
 submitBtn.onclick = getScores;
 
 // || FUNCTIONS
 startTimer = () => {
-  // Display seconds on screen
+  secondsCount--;
   timerNumber.innerText = secondsCount;
-  // Sets timer
-  var intervalTime = setInterval(() => {
-    secondsCount--;
-    timerNumber.innerText = secondsCount;
-    // Tests if time has run out or if questions are completed
-    if (secondsCount <= 0 || questionCount === maxNumberOfQuestions) {
-      gameOver();
-      clearInterval(intervalTime);
-    } else {
-      getQuestionAndChoices();
-    }
-  }, 1000);
+  if (secondsCount <= 0) {
+    gameOver();
+  }
 };
 
-function startQuiz() {
+function startGame() {
+  questionCount = 0;
   // Shows question page + timer, and hides home screen + leaderboard
   startScreenWrap.classList.add("hide");
   highScores.classList.add("hide");
   questionsWrap.classList.remove("hide");
   timerWrap.classList.remove("hide");
-  startTimer();
+  // Spread and copy question into new array
+  // Display number of question and total questions for start screen
+  displayQuestionNumber = `${questionCount + 1}/${maxNumberOfQuestions}`;
+  questionNumber.innerHTML = displayQuestionNumber;
+  questionNumber.setAttribute("style", "color: var(--highlight-turqoise);");
+
+  availableQuestions = [...questions];
+  time = setInterval(startTimer, 1000);
+  timerNumber.innerText = secondsCount;
   getQuestionAndChoices();
 }
 
 getQuestionAndChoices = () => {
-  // Assign index of current question to a variable
-  var currentQuestion = questions[indexOfCurrentQuestion];
+  questionCount++;
+  // Get random questions
+  this.questionIndex = Math.floor(Math.random() * availableQuestions.length);
+  // Assign index of random question to a variable
+  var currentQuestion = availableQuestions[questionIndex];
   // Display current question
   questionTitle.innerText = currentQuestion.title;
   // Clear choices from display
@@ -72,11 +79,17 @@ getQuestionAndChoices = () => {
 };
 
 function checkAnswer() {
+  var timePenalty = 10;
+  // Display number of current question and total questions
+  displayQuestionNumber = `${questionCount + 1}/${maxNumberOfQuestions}`;
+  questionNumber.innerHTML = displayQuestionNumber;
   // Assign audio.wav to corresponding variables
   var incorrectAudio = new Audio("assets/sfx/incorrect.wav");
   var correctAudio = new Audio("assets/sfx/correct.wav");
   // Check if the choice selected value matches the corresponding answer
-  if (this.value === questions[indexOfCurrentQuestion].answer) {
+  if (this.value === availableQuestions[questionIndex].answer) {
+    // Add one if correct answer given
+    correctAnswersTotal++;
     // Write and style correct feedback
     feedback.innerText = "Well done, that was correct!";
     feedback.setAttribute("style", "color: --highlight-turqoise; border-top: solid 2px --highlight-turqoise;");
@@ -93,27 +106,36 @@ function checkAnswer() {
     feedback.innerText = "Unlucky, that was incorrect!";
     feedback.setAttribute("style", "color: red; border-top: solid 2px red;");
   }
+  // Print correct answers total
+  correctAnswersDisplay.innerText = `Total correct answers: ${correctAnswersTotal} out of ${maxNumberOfQuestions} questions`;
   // Set timer for feedback to stay visible on the page
   feedback.setAttribute("class", "feedback");
   setTimeout(() => {
     feedback.setAttribute("class", "feedback hide");
   }, 1500);
   // Remove current question from selection so it doesn't repeat
-  questions.splice(indexOfCurrentQuestion, 1);
-  // View next question and add 1 to count
-  questionCount++;
-  indexOfCurrentQuestion++;
+  availableQuestions.splice(questionIndex, 1);
+  // Conditional to ensure that the quiz ends or get another question
+  if (questionCount == maxNumberOfQuestions) {
+    gameOver();
+  } else {
+    getQuestionAndChoices();
+  }
 }
 
 gameOver = () => {
+  // Show end screen
   endScreenWrap.classList.remove("hide");
   questionsWrap.classList.add("hide");
   startScreenWrap.classList.add("hide");
   timerWrap.classList.add("hide");
   submitBtn.classList.add("button");
+  // Conditional make score/time 0 if time is less than zero
+  clearInterval(time);
   if (secondsCount < 0) {
     secondsCount = 0;
   }
+  // Print final score, as remaining seconds
   finalScoreSpan.textContent = secondsCount;
 };
 
@@ -132,6 +154,6 @@ function getScores() {
   scores.splice(5);
   // Update local storage with high scores
   localStorage.setItem("scores", JSON.stringify(scores));
-  // wWhen submitted go to leaderboard
-  window.location.assign("leaderboard.html");
+  // When submitted go to leaderboard
+  location.assign("leaderboard.html");
 }
