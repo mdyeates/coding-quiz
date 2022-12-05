@@ -11,13 +11,13 @@
 <h3 align="center">Coding Quiz</h3>
 
   <p align="center">
-    In this coding quiz, you will learn about the fundamentals of JavaScript. There are 15 multiple-choice questions and you have a time limit of 150 seconds. The remaining time will determine your score at the end. Make sure you answer all the questions within the timeframe, but keep in mind that you will be penalised by 10 seconds for every incorrect answer!
-    
+  In this coding quiz, you will learn about the fundamentals of JavaScript. There are 5 randomly selected multiple-choice questions and you will have a time limit of 50 seconds. The remaining time will determine your score at the end. Make sure you answer all the questions within the timeframe, but keep in mind that you will be penalised by 10 seconds for every incorrect answer!
+
 <br />
 <a href="https://github.com/mdyeates/coding-quiz"><strong>Explore the docs »</strong></a>
 <br />
 <br />
-<a href="https://github.com/mdyeates/coding-quiz">View Demo</a>
+<a href="https://mdyeates.github.io/coding-quiz/">View Live Deployment</a>
 ·
 <a href="https://github.com/mdyeates/coding-quiz/issues">Report Bug</a>
 ·
@@ -45,13 +45,43 @@
 
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Coding Quiz][product-screenshot]](https://mdyeates.github.io/coding-quiz/)
+
+User Story:
+
+- AS A coding boot camp student
+- I WANT to take a timed quiz on JavaScript fundamentals that stores high scores
+- SO THAT I can gauge my progress compared to my peers
+
+Project Summary:
+
+- When the play now button is clicked, a timer starts and you are presented with a question
+- Each question is randomly picked from a bank of over 40 questions
+- When a question is answered, another question appears
+- If a question is answered incorrectly, 10 seconds is subtracted from the clock
+- Once all the questions are answered or the timer reaches zero, the game will end
+- The score is calculated from the remaining time at the end of the game
+- The user can save their score to the leaderboard
+- Only the top 5 scores are displayed, highest to lowest
+
+During this project I learned how to:
+
+- Extract data from a web page and place data into it
+- Trigger JavaScript functions on events to add interactivity to a page
+- Store data on the client side using local storage
+- Inspect the Window object
+- Traverse the DOM using various Web APIs
+- Query the DOM for elements by their selector
+- Add styles to specific elements using setAttribute()
+- Create and append elements to the document.
+- Implement timers using setInterval() and clearInterval()
+- Convert an object to and from a JSON string by implementing JSON methods.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+This application will be useful for individuals studying JavaScript fundamentals. It would also be a handy way to prepare for the LinkedIn JavaScript Skills Assessment which features some of the questions that appear in this application.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -97,7 +127,8 @@ Project Link: [https://github.com/mdyeates/coding-quiz](https://github.com/mdyea
 - [appendChild](https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild)
 - [Arrow Functions](https://www.w3schools.com/js/js_arrow_function.asp)
 - [Values](https://stackoverflow.com/questions/11563638/how-do-i-get-the-value-of-text-input-field-using-javascript)
-- [Podium Image](https://www.flaticon.com/free-icon/podium_548481?related_id=548440&origin=search)
+- [Sorting an Array](https://stackoverflow.com/questions/5876424/sort-array-of-objects)
+- [Flat Icon](https://www.flaticon.com/free-icon/podium_548481?related_id=548440&origin=search)
 - [Vector Juice](https://www.freepik.com/author/vectorjuice)
 - [FreePik](https://www.freepik.com/free-vector/question-mark-layered-3d-vector-font_18919699.htm#query=quiz&position=31&from_view=search&track=sph)
 
