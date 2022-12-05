@@ -9,9 +9,7 @@
   </head>
 
   <body>
-    <div class="scores"><a href="highscores.html">View Highscores</a></div>
-
-    <div class="timer">Time: <span id="time">0</span></div>
+    <div class="timer hide">Seconds Remaining: <span id="time">0</span></div>
 
     <div class="wrapper">
       <div id="start-screen" class="start">
@@ -21,27 +19,34 @@
         <p>Test your knowledge</p>
 
         <button id="start">Play Now</button>
-        <a href="about.html"><button id="about">About</button></a>
+        <a href="instructions.html"><button id="instructions" class="button2">Instructions</button></a>
+        <div class="scores">
+          <a href="leaderboard.html"><button id="instructions" class="button2">Leaderboard</button></a>
+        </div>
       </div>
 
       <div id="questions" class="hide">
-        <h2 id="question-title"></h2>
+        <h2 id="question-title" class="questionTitle"></h2>
         <div id="choices" class="choices"></div>
       </div>
 
       <div id="end-screen" class="hide">
-        <h2>All done!</h2>
-        <p>Your final score is <span id="final-score"></span>.</p>
-        <p>
-          Enter initials: <input type="text" id="initials" max="3" />
+        <h2 class="textCenter">Results</h2>
+        <div class="scoreWrap">
+          <p>Your final score is</p>
+          <div class="finalScoreWrap">
+            <p id="final-score" class="textCenter">00</p>
+          </div>
+        </div>
+        <p class="textCenter">
+          <input class="input" type="text" id="initials" max="3" placeholder="Enter your initials here..." />
           <button id="submit">Submit</button>
         </p>
       </div>
 
       <div id="feedback" class="feedback hide"></div>
     </div>
-
-    <script src="./assets/js/questions.js"></script>
-    <script src="./assets/js/logic.js"></script>
+    <script src="assets/js/questions.js"></script>
+    <script src="assets/js/logic.js"></script>
   </body>
 </html>

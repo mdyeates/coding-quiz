@@ -4,10 +4,10 @@
 :root {
   --bg-purple: #1f1147;
   --bglight-purple: #361e70;
-  --alt-purple: #2a175b;
   --btn-purple: #6949fd;
   --highlight-turqoise: #74eabc;
-  --text-white: #fff;
+  --text-white: #f3edfc;
+  --bg-gold: #fcdb41;
 }
 
 /* || GLOBAL VARIABLES */
@@ -19,27 +19,25 @@ body {
 }
 
 /* || CUSTOM STYLES */
-/* Start Screen */
 .start {
   padding: 10px;
 }
 
 .start img {
   width: 90%;
-  margin-bottom: 10px;
 }
 
 .start h1 {
   color: var(--highlight-turqoise);
 }
 
-.start button:last-child {
+.button2 {
   border: 1px solid var(--btn-purple);
   color: var(--btn-purple);
   background-color: var(--bg-purple);
 }
 
-.start button:last-child:hover {
+.button2:hover {
   border: 1px solid var(--btn-purple);
   color: var(--text-white);
   background-color: var(--btn-purple);
@@ -57,11 +55,11 @@ a:hover {
 
 button {
   display: inline-block;
-  margin: 5px;
   cursor: pointer;
-  width: 50%;
+  margin-bottom: 10px;
+  width: 100%;
   font-size: 100%;
-  background-color: #6949fd;
+  background-color: var(--btn-purple);
   border-radius: 5px;
   padding: 12px 50px;
   color: white;
@@ -93,7 +91,8 @@ li {
 }
 
 li:nth-child(odd) {
-  background-color: #f3edfc;
+  background-color: var(--text-white);
+  color: #1f1147;
 }
 
 .wrapper {
@@ -109,23 +108,82 @@ li:nth-child(odd) {
   text-align: center;
 }
 
-.scores {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-}
-
 .feedback {
-  font-style: italic;
   font-size: 120%;
   margin-top: 20px;
   padding-top: 10px;
-  color: gray;
-  border-top: 2px solid #ccc;
+  color: var(--highlight-turqoise);
+  border-top: 2px solid var(--highlight-turqoise);
 }
 
 .timer {
   position: absolute;
   top: 10px;
   right: 10px;
+}
+
+.leaderboard img {
+  width: 25%;
+  display: block;
+  margin: 0 auto;
+}
+
+.instructions img {
+  width: 30%;
+  display: block;
+  margin: 0 auto;
+}
+
+.textCenter {
+  text-align: center;
+}
+
+.scoreWrap {
+  background-image: linear-gradient(var(--btn-purple), var(--bglight-purple));
+  height: 50vh;
+  width: 100%;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.5rem;
+}
+
+.finalScoreWrap {
+  background-color: var(--bg-gold);
+  border-radius: 100%;
+  height: 200px;
+  width: 200px;
+  color: var(--text-white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 300%;
+}
+
+::placeholder {
+  color: var(--btn-purple);
+  border-style: none;
+  text-align: center;
+}
+
+.input {
+  padding: 7px;
+  background-color: var(--bg-purple);
+  border: var(--btn-purple) 1px solid;
+  margin-bottom: 23.9px;
+  margin-top: 4.7px;
+  border-radius: 2px;
+  color: var(--btn-purple);
+  text-align: center;
+  width: 50%;
+}
+
+input:focus {
+  outline: 2px solid var(--highlight-turqoise);
+  color: var(--btn-purple);
+  text-align: center;
 }
