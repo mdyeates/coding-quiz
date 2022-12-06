@@ -34,7 +34,7 @@ startTimer = () => {
   secondsCount--;
   timerNumber.innerText = secondsCount;
   if (secondsCount <= 0) {
-    gameOver();
+    endGame();
   }
 };
 
@@ -119,13 +119,13 @@ function checkAnswer() {
   availableQuestions.splice(questionIndex, 1);
   // Conditional to ensure that the quiz ends or get another question
   if (questionCount == maxNumberOfQuestions) {
-    gameOver();
+    endGame();
   } else {
     getQuestionAndChoices();
   }
 }
 
-gameOver = () => {
+endGame = () => {
   // Show end screen
   endScreenWrap.classList.remove("hide");
   questionsWrap.classList.add("hide");
