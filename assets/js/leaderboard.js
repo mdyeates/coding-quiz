@@ -1,6 +1,6 @@
 var orderedListTag = document.getElementById("leaderboard");
 
-// Event listener to run clearLeaderboard function when clicked
+// Event listener to run clearLeaderboard() when clicked
 document.getElementById("clear").onclick = clearLeaderboard;
 
 var scores = JSON.parse(localStorage.getItem("scores")) || [];
