@@ -61,6 +61,7 @@ Project Summary:
 - Each question is randomly picked from a bank of over 40 questions
 - When a question is answered, another question appears
 - If a question is answered incorrectly, 10 seconds is subtracted from the clock
+- A sound is played for a correct answer or an incorrect answer
 - Once all the questions are answered or the timer reaches zero, the game will end
 - The score is calculated from the remaining time at the end of the game
 - The user can save their score to the leaderboard
@@ -75,17 +76,19 @@ During this project I learned how to:
 - Traverse the DOM using various Web APIs
 - Query the DOM for elements by their selector
 - Add styles to specific elements using setAttribute()
-- Create and append elements to the document.
+- Create and append elements to the document
 - Implement timers using setInterval() and clearInterval()
-- Convert an object to and from a JSON string by implementing JSON methods.
+- Convert an object to and from a JSON string by implementing JSON methods
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Usage
 
-This application will be useful for individuals studying JavaScript fundamentals. It would also be a handy way to prepare for the LinkedIn JavaScript Skills Assessment which features some of the questions that appear in this application.
+This application is useful for individuals studying JavaScript fundamentals. It would also be a handy way to prepare for the LinkedIn JavaScript Skills Assessment which features some of the questions.
 
-![Coding Quiz](assets/images/usage.gif)
+You can view the functionality of this application below:
+
+![Coding Quiz](assets/images/usagegif.gif)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
