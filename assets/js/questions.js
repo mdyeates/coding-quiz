@@ -17,7 +17,7 @@ var questions = [
       "It completes execution without returning",
       "It copies a local variable to the global scope",
     ],
-    answer: " It returns a reference to a variable in its parent scope",
+    answer: "It returns a reference to a variable in its parent scope",
   },
   {
     title: "Which property references the DOM object that dispatched an event?",
