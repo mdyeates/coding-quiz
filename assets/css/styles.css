@@ -196,8 +196,13 @@ li {
 }
 
 li:nth-child(odd) {
-  background-color: var(--text-white);
-  color: #1f1147;
+  background-color: var(--bglight-purple);
+  color: var(--text-white);
+}
+
+li:first-child {
+  background-color: var(--bg-gold);
+  color: var(--bg-purple);
 }
 
 /* Instructions Screen */
