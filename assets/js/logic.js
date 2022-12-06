@@ -14,6 +14,7 @@ var feedback = document.querySelector("#feedback");
 var finalScoreSpan = document.querySelector("#final-score");
 var questionNumber = document.querySelector("#question-number");
 var correctAnswersDisplay = document.querySelector("#correct-answers-total");
+var progressBarFull = document.querySelector(".progressBarFull");
 
 // || GLOBAL
 var questionCount = 0;
@@ -44,12 +45,11 @@ function startGame() {
   highScores.classList.add("hide");
   questionsWrap.classList.remove("hide");
   timerWrap.classList.remove("hide");
-  // Spread and copy question into new array
   // Display number of question and total questions for start screen
-  displayQuestionNumber = `${questionCount + 1}/${maxNumberOfQuestions}`;
+  displayQuestionNumber = `Question: ${questionCount + 1}/${maxNumberOfQuestions}`;
   questionNumber.innerHTML = displayQuestionNumber;
   questionNumber.setAttribute("style", "color: var(--highlight-turqoise);");
-
+  // Spread and copy questions into new array to get random question to work
   availableQuestions = [...questions];
   time = setInterval(startTimer, 1000);
   timerNumber.innerText = secondsCount;
@@ -58,6 +58,8 @@ function startGame() {
 
 getQuestionAndChoices = () => {
   questionCount++;
+  // Increase progress bar by percentage
+  progressBarFull.style.width = `${(questionCount / maxNumberOfQuestions) * 100}%`;
   // Get random questions
   this.questionIndex = Math.floor(Math.random() * availableQuestions.length);
   // Assign index of random question to a variable
@@ -81,7 +83,7 @@ getQuestionAndChoices = () => {
 function checkAnswer() {
   var timePenalty = 10;
   // Display number of current question and total questions
-  displayQuestionNumber = `${questionCount + 1}/${maxNumberOfQuestions}`;
+  displayQuestionNumber = `Question: ${questionCount + 1}/${maxNumberOfQuestions}`;
   questionNumber.innerHTML = displayQuestionNumber;
   // Assign audio.wav to corresponding variables
   var incorrectAudio = new Audio("assets/sfx/incorrect.wav");
@@ -96,7 +98,7 @@ function checkAnswer() {
     // Play correct audio.wav
     correctAudio.play();
   } else {
-    // Remove time if incorrect from count
+    // Remove time if answer is incorrect
     secondsCount -= timePenalty;
     // Play incorrect audio.wav
     incorrectAudio.play();
@@ -112,7 +114,7 @@ function checkAnswer() {
   feedback.setAttribute("class", "feedback");
   setTimeout(() => {
     feedback.setAttribute("class", "feedback hide");
-  }, 1500);
+  }, 700);
   // Remove current question from selection so it doesn't repeat
   availableQuestions.splice(questionIndex, 1);
   // Conditional to ensure that the quiz ends or get another question
@@ -130,7 +132,7 @@ gameOver = () => {
   startScreenWrap.classList.add("hide");
   timerWrap.classList.add("hide");
   submitBtn.classList.add("button");
-  // Conditional make score/time 0 if time is less than zero
+  // Conditional make score/time equal to 0 if time is less than zero
   clearInterval(time);
   if (secondsCount < 0) {
     secondsCount = 0;
