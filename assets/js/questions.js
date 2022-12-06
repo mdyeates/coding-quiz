@@ -86,16 +86,6 @@ var questions = [
     answer: "Document.querySelectorAll('img')",
   },
   {
-    title: "How would you add a data item named animal with a value of sloth to local storage for the current domain?",
-    choices: [
-      "LocalStorage.setItem('animal','sloth');",
-      "document.localStorage.setItem('animal','sloth');",
-      "localStorage.setItem({animal:'sloth'});",
-      "localStorage.setItem('animal','sloth');",
-    ],
-    answer: "document.localStorage.setItem('animal','sloth');",
-  },
-  {
     title: "Which JavaScript loop ensures that at least a singular iteration will happen?",
     choices: ["do...while", "forEach", "while", "for"],
     answer: "do...while",
@@ -165,17 +155,6 @@ var questions = [
     title: "Which tag pair is used in HTML to embed JavaScript?",
     choices: ["<js></js>", "<script></script>", "<javascript></javascript>", "<style></style>"],
     answer: "<script></script>",
-  },
-  {
-    title: "What is the difference between the map() and the forEach() methods on the Array prototype?",
-    choices: [
-      "There is no difference",
-      "The forEach() method returns a single output value, whereas the map() method performs operation on each value in the array.",
-      "The map() methods returns a new array with a transformation applied on each item in the original array, whereas the forEach() method iterates through an array with no return value.",
-      "The forEach() methods returns a new array with a transformation applied on each item in the original array, whereas the map() method iterates through an array with no return value.",
-    ],
-    answer:
-      "The map() methods returns a new array with a transformation applied on each item in the original array, whereas the forEach() method iterates through an array with no return value.",
   },
   {
     title: "Which event is fired on a text field within a form when a user tabs to it, or clicks or touches it?",
