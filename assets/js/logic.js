@@ -25,10 +25,6 @@ var availableQuestions = [];
 var displayQuestionNumber;
 var correctAnswersTotal = 0;
 
-// Event listener to start quiz/submit score
-startBtn.onclick = startGame;
-submitBtn.onclick = getScores;
-
 // || FUNCTIONS
 startTimer = () => {
   secondsCount--;
@@ -38,7 +34,7 @@ startTimer = () => {
   }
 };
 
-function startGame() {
+startBtn.onclick = function startGame() {
   questionCount = 0;
   // Shows question page + timer, and hides home screen + leaderboard
   startScreenWrap.classList.add("hide");
@@ -54,7 +50,7 @@ function startGame() {
   time = setInterval(startTimer, 1000);
   timerNumber.innerText = secondsCount;
   getQuestionAndChoices();
-}
+};
 
 getQuestionAndChoices = () => {
   questionCount++;
@@ -141,7 +137,7 @@ endGame = () => {
   finalScoreSpan.textContent = secondsCount;
 };
 
-function getScores() {
+submitBtn.onclick = function getScores() {
   var userScore = secondsCount;
   var userInitials = initials.value;
   var scores = JSON.parse(localStorage.getItem("scores")) || [];
@@ -158,4 +154,4 @@ function getScores() {
   localStorage.setItem("scores", JSON.stringify(scores));
   // When submitted go to leaderboard
   location.assign("leaderboard.html");
-}
+};
