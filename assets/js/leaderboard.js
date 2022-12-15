@@ -1,29 +1,38 @@
+// Get the leaderboard element
 var orderedListTag = document.getElementById("leaderboard");
 
-// Event listener to run clearLeaderboard() when clicked
+// Event listener to run clearLeaderboard() when the clear button is clicked
 document.getElementById("clear").onclick = clearLeaderboard;
 
+// Get the scores from local storage, or an empty array if there are none
 var scores = JSON.parse(localStorage.getItem("scores")) || [];
 
 function clearLeaderboard() {
+  // Remove the scores from local storage
   localStorage.removeItem("scores");
-  location.reload();
+
+  // Clear the scores from the leaderboard
+  while (orderedListTag.firstChild) {
+    orderedListTag.removeChild(orderedListTag.firstChild);
+  }
 }
 
 function printScores() {
-  // Loop over each score and create li tag
+  // Loop over each score and create an li tag
   scores.forEach((score) => {
     var newListTag = document.createElement("li");
-    var initialsEntered = score.name.length;
-    // Conditional to insert text if there is a blank entry
-    if (initialsEntered > 0) {
-      newListTag.innerHTML = `${score.name}: ${score.score}`;
+
+    // Set the text content of the li element based on whether the score has a name associated with it
+    if (score.name.length > 0) {
+      newListTag.textContent = `${score.name}: ${score.score}`;
     } else {
-      newListTag.innerHTML = `Anonymous: ${score.score}`;
+      newListTag.textContent = `Anonymous: ${score.score}`;
     }
+
     // Print to leaderboard
     orderedListTag.appendChild(newListTag);
   });
 }
 
+// Call the printScores function to print the scores
 printScores();
